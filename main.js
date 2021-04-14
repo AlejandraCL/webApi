@@ -59,9 +59,14 @@ if(SpeechRecognition) {
       searchFormInput.value = transcript;
     }
     else if(transcript.toLowerCase().trim()==="salir del sitio") { 
-      var res=confirm("Si desea salir da clic en aceptar");
-      if (res==true) {
-         window.close();}}
+      var op=true;
+      window.alert=salir;
+      function Salida_API () {
+        var res;
+        if (op) {
+          res=confirm('¿Deseas salir de la API?');
+          if (res){
+            window.close();}}}}
     else {
      if(transcript.toLowerCase().trim()==="localiza") {
        searchForm.submit();
