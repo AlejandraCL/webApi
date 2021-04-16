@@ -59,14 +59,8 @@ if(SpeechRecognition) {
       searchFormInput.value = transcript;
     }
     else if(transcript.toLowerCase().trim()==="salir del sitio") { 
-      var op=true;
-      window.alert=salir;
-      function Salida_API () {
-        var res;
-        if (op) {
-          res=confirm('¿Deseas salir de la API?');
-          if (res){
-            window.close();}}}}
+      salida();
+    }
     else {
      if(transcript.toLowerCase().trim()==="localiza") {
        searchForm.submit();
@@ -110,3 +104,13 @@ else {
   console.log("Your Browser does not support speech Recognition");
   info.textContent = "Your Browser does not support Speech Recognition";
 }
+var op=true;
+window.alert=salida;
+function salida(){
+  var res;
+  if (op){
+    res=confirm('¿Deseas salir del sitio?');
+    if (res){
+      window.close();}}
+      else{
+      return false;}}
